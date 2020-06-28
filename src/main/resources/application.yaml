@@ -1,0 +1,45 @@
+server:
+  tomcat:
+        protocol-header: x-forwarded-proto
+        remote-ip-header: x-forwarded-for
+  port: 8081
+#  servlet:
+#     contextPath: /auth
+
+spring:
+  thymeleaf:
+    prefix: classpath:/templates  
+  datasource:
+    url: jdbc:mysql://localhost:3306/accounts?createDatabaseIfNotExist=true
+    username: root
+    password: 
+    driver-class-name: com.mysql.jdbc.Driver 
+    initialization-mode: always
+  jpa:
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+        temp:
+          use_jdbc_metadata_defaults: false
+        jdbc:
+          lob:
+            non_contextual_creation: true
+                    
+
+        
+#logging:
+#  level:
+#     org.springframework.security.oauth2: DEBUG
+#     org.springframework.security.jwt: DEBUG
+#     org.springframework: DEBUG
+#     com.progress.appserv.services.security: DEBUG
+#     org.hibernate.type: trace
+
+
+#34.71.102.212
+#Welcome123
